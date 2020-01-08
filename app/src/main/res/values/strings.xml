@@ -1,0 +1,34 @@
+<resources>
+
+    <string name="app_name">Práctica 5</string>
+
+    <string name="toast">Toast</string>
+    <string name="notificacion">Notificación</string>
+
+    <string name="topT">TOP</string>
+    <string name="centerT">CENTER</string>
+    <string name="bottomT">BOTTOM</string>
+
+    <string name="verticalAli">Alineación Vertical</string>
+    <string name="izquierdaT">TOP</string>
+    <string name="centroT">CENTER</string>
+    <string name="derechaT">BOTTOM</string>
+
+    <string name="horizontalAli">Alineación Horizontal</string>
+
+    <string name="izquierda">IZQUIERDA</string>
+    <string name="centro">CENTRO</string>
+    <string name="derecha">DERECHA</string>
+
+    <string-array name="aliHori">
+        <item>@string/izquierda</item>
+        <item>@string/centro</item>
+        <item>@string/derecha</item>
+    </string-array>
+
+    <string name="toasteando">Toasteando</string>
+    <string name="notificando">Notificando</string>
+
+
+
+</resources>
