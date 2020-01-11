@@ -46,7 +46,6 @@ public class Notificando extends AppCompatActivity
         setTitle("Notificación");
         createNotificationChannel();
 
-
         txtTitulo = findViewById(R.id.txtTitulo);
         txtMensaje = findViewById(R.id.txtTexto);
         txtSegundos = findViewById(R.id.txtSegundos);
@@ -54,7 +53,6 @@ public class Notificando extends AppCompatActivity
 
         nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         i = PendingIntent.getActivity(this, 0, getIntent(), 0);
-
 
         btnNotificando.setOnClickListener(new Button.OnClickListener()
         {
@@ -71,7 +69,6 @@ public class Notificando extends AppCompatActivity
                     @Override
                     public void run()
                     {
-
                         String titulo = txtTitulo.getText().toString();
                         String mensaje = txtMensaje.getText().toString();
 
@@ -85,53 +82,28 @@ public class Notificando extends AppCompatActivity
                                 .setContentTitle(titulo)
                                 .setContentIntent(resultPendingIntent)
                                 .setContentText(mensaje)
-                                //.setTimeoutAfter(6000)
                                 .setColor(Color.MAGENTA)
                                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
                         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
                         notificationManager.notify(0, builder.build());
                     }
-                }, milisegundos); // 6 seconds
-
+                }, milisegundos);
             }
         });
-
-
     }
 
-    public void notificar (View view)
+    private void createNotificationChannel()
     {
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.babyyoda)
-                .setContentTitle("TÍTULO")
-                .setContentText("TEXTO")
-                //.setTimeoutAfter(6000)
-                .setColor(Color.MAGENTA)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-
-        // notificationId is a unique int for each notification that you must define
-        notificationManager.notify(0, builder.build());
-    }
-
-    private void createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
             CharSequence name = ("nombre");
             String description = ("descripción");
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
-            // Register the channel with the system; you can't change the importance
-            // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
     }
-
 }
