@@ -46,6 +46,7 @@ public class Notificando extends AppCompatActivity
         setTitle("Notificación");
         createNotificationChannel();
 
+
         txtTitulo = findViewById(R.id.txtTitulo);
         txtMensaje = findViewById(R.id.txtTexto);
         txtSegundos = findViewById(R.id.txtSegundos);
