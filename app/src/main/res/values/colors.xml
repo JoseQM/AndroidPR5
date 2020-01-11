@@ -8,5 +8,6 @@
     <color name="colorVerde">#A2E341</color>
     <color name="colorBlanco">#FFFFFF</color>
     <color name="colorNegro">#040504</color>
+    <color name="colorGray">#A9A9A9</color>
 
 </resources>

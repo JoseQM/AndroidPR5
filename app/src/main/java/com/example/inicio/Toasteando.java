@@ -3,6 +3,7 @@ package com.example.inicio;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -49,7 +50,7 @@ public class Toasteando extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toasteando);
-
+        setTitle("Toast");
 
         txtDesplaVerti = findViewById(R.id.txtVerti);
         txtDesplaHori = findViewById(R.id.txtHori);
@@ -84,7 +85,10 @@ public class Toasteando extends AppCompatActivity
                 t1.setGravity(i | o, despHorizontal, despVertical);
 
                 TextView txt = (TextView) t1.getView().findViewById(android.R.id.message);
-                txt.setTextColor(Color.RED);
+                txt.setTextColor(Color.BLACK);
+                View view = t1.getView();
+                view.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
+
                 t1.show();
             }
         });
